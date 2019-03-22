@@ -30,7 +30,7 @@
                         <p><b> {{ item.title }} </b></p>
                         <p>{{ item. desc }}</p>
                         <p>
-                            <a v-bind:href="'https://www.instagram.com/' + item.instagram" v-if="item.instagram" target="_blank">IG 📷 /</a>
+                            <a v-bind:href="'https://www.instagram.com/' + item.instagram" v-if="item.instagram" target="_blank">IG 📷 </a> /
                             <a v-bind:href="item.website" v-if="item.website" target="_blank">Web 🌎</a>
                         </p>
                     </div>
@@ -68,9 +68,6 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
-    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
     <script src="/assets/main.min.js"></script>
 
 </body>
