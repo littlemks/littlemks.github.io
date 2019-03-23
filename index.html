@@ -8,6 +8,17 @@
     komunitas untuk mengisi waktu luang atau mengembangkan bakat, sampai usaha-usaha startup asli dari Makassar."/>
     <link rel="stylesheet" href="/assets/main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136815168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-136815168-1');
+    </script>
+
 </head>
 <body>
 
@@ -18,33 +29,44 @@
 
     <div id="app">
             <div id="tags">
-                <li v-for="tag in tags" v-on:click="filter(tag)" v-bind:class="{ tagSelected: activeTag == tag}">
+                <li v-for="tag in tags" v-on:click="filter(tag)" v-bind:class="{ tagSelected: activeTag == tag}" class="btn">
                      {{tag}}
                 </li>
+                <li class="btn is-success"> <a href="http://bit.ly/littlemks-form" target="_blank"> Data baru +</a></li>
             </div>
 
             <div id="products">
-                <li v-for="item in filteredItems.slice().reverse()">
+                <li v-for="item in filteredItems">
                     <img v-bind:src="item.thumbnail" alt="{{img.title}}" width="100" height="100">
                     <div class="">
                         <p><b> {{ item.title }} </b></p>
                         <p>{{ item. desc }}</p>
                         <p>
-                            <a v-bind:href="'https://www.instagram.com/' + item.instagram" v-if="item.instagram" target="_blank">IG 📷 </a> /
-                            <a v-bind:href="item.website" v-if="item.website" target="_blank">Web 🌎</a>
+                            <span v-if="item.instagram">
+                                <a class="btn" v-bind:href="'https://www.instagram.com/' + item.instagram" target="_blank">IG 📷 </a>
+                            </span>
+
+                            <span v-if="item.website"> /
+                                <a class="btn" v-bind:href="item.website" target="_blank">Web 🌎</a>
+                            </span>
                         </p>
                     </div>
                 </li>
+
+                <br>
+                <div class="btn is-fresh" v-if="moreItem" v-on:click="loadMore">
+                    Load More
+                </div>
             </div>
     </div>
 
     <footer>
-        <b>Tentang</b> <br>
+        <p><b>Tentang</b></p>
         Kumpulan hal positif yang ada di Makasasar. Cari cafe atau coworking tempat untuk kamu bekerja,
-        komunitas untuk mengisi waktu luang atau mengembangkan bakat, sampai usaha-usaha startup asli dari Makassar.
-        Kamu bisa memberi kritik atau saran data apa lagi yang perlu dimasukkan di kolom komentar di bawah.
+        komunitas untuk mengisi waktu luang atau mengembangkan bakat, sampai usaha-usaha startup asli dari Makassar. <br>
+        Kamu bisa memberi kritik atau saran dengan kolom komentar di bawah. Atau tambahkan data baru <a href="http://bit.ly/littlemks-form" target="_blank"> disini</a><br>
         Little Makassar bukan media, bukan startup, hanya berbagi informasi.
-        dibuat oleh <a href='https://www.instagram.com/hilmanspace/' target="_blank">@hilmanspace</a>.
+        dibuat oleh <a href='https://hilman.space/' target="_blank">hilman ramadhan</a>.
         Kalau menurut kamu ini menarik, silahkan share linknya bit.ly/littlemks
     </footer>
     <div id="disqus_thread"></div>
