@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="/assets/main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
+    <meta name="twitter:title" content="Little Makassar">
+    <meta name="twitter:description" content="Kumpulan hal positif yang ada di Makasasar. Cari tempat kerja, komunitas dan hal asyik lainnya di Makassar">
+    <meta name="twitter:image" content="/assets/logo.jpg">
+    <link rel="icon" href="/favicon.ico">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136815168-1"></script>
     <script>
@@ -33,6 +38,10 @@
                      {{tag}}
                 </li>
                 <li class="btn is-success"> <a href="http://bit.ly/littlemks-form" target="_blank"> Data baru +</a></li>
+            </div>
+
+            <div v-if="loading" class="loading">
+                <div class="lds-heart"><div></div></div>
             </div>
 
             <div id="products">
