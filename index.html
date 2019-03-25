@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Little Makassar</title>
-    <meta name="description" content="Kumpulan hal positif yang ada di Makasasar. Cari cafe atau coworking tempat untuk kamu bekerja,
-    komunitas untuk mengisi waktu luang atau mengembangkan bakat, sampai usaha-usaha startup asli dari Makassar."/>
+    <meta name="description" content="Kumpulan hal positif yang ada di Makasasar. Apa saja hal menarik yang ada di kota Makassar?."/>
     <link rel="stylesheet" href="/assets/main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
@@ -44,7 +43,7 @@
                 <div class="lds-heart"><div></div></div>
             </div>
 
-            <div id="products">
+            <div v-else id="products">
                 <li v-for="item in filteredItems">
                     <img v-bind:src="item.thumbnail" alt="{{img.title}}" width="100" height="100">
                     <div class="">
@@ -66,6 +65,11 @@
                 <div class="btn is-fresh" v-if="moreItem" v-on:click="loadMore">
                     Load More
                 </div>
+            </div>
+
+            <div v-if="error">
+                <h3>Mohon maaf sedang ada masalah untuk menampilkan data,
+                    silahkan kembali ke dunia nyata sejenak</h3>
             </div>
     </div>
 
